@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  /* Product Card Styles */
+  .product-card {
+    @apply relative bg-white rounded-2xl p-6 shadow-sm border border-slate-100
+           transition-all duration-300 ease-out
+           hover:shadow-lg hover:shadow-primary-500/10 hover:-translate-y-1
+           hover:border-primary-200;
+  }
+  
+  .product-card-icon {
+    @apply w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600
+           flex items-center justify-center text-white mb-4
+           shadow-lg shadow-primary-500/25;
+  }
+  
+  /* Badge Styles */
+  .badge-coming-soon {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+           bg-amber-100 text-amber-800 border border-amber-200;
+  }
+  
+  /* Navigation Link Styles */
+  .nav-link {
+    @apply text-slate-600 hover:text-primary-600 transition-colors duration-200
+           font-medium text-sm;
+  }
+  
+  .nav-link-mobile {
+    @apply block px-3 py-2 text-base font-medium text-slate-700
+           hover:text-primary-600 hover:bg-slate-50 rounded-lg transition-colors;
+  }
+  
+  /* Section Styles */
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-slate-900 mb-4;
+  }
+  
+  .section-subheading {
+    @apply text-lg text-slate-600 max-w-2xl mx-auto;
+  }
+  
+  /* Gradient Backgrounds */
+  .hero-gradient {
+    @apply bg-gradient-to-br from-slate-50 via-white to-primary-50;
+  }
+  
+  .abstract-shape {
+    @apply absolute rounded-full opacity-30 blur-3xl;
+  }
+}
+
+@layer utilities {
+  /* Animation Delays */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  .animation-delay-700 {
+    animation-delay: 700ms;
+  }
+}
