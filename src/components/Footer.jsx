@@ -35,10 +35,10 @@ export default function Footer() {
                     <div className="md:text-right">
                         <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
                         <a
-                            href="mailto:contact@vantumworks.com"
+                            href="mailto:contact@vantumworks.io"
                             className="text-primary-400 hover:text-primary-300 transition-colors text-lg inline-block"
                         >
-                            contact@vantumworks.com
+                            contact@vantumworks.io
                         </a>
                     </div>
                 </div>
