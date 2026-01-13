@@ -99,22 +99,9 @@ const icons = {
     ),
 }
 
-function ProductCard({ product, index }) {
-    const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: '-30px' })
-
+function ProductCard({ product }) {
     return (
-        <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{
-                duration: 0.4,
-                delay: index * 0.05,
-                ease: [0.25, 0.1, 0.25, 1]
-            }}
-            className="product-card hover:shadow-lg hover:shadow-primary-500/10 hover:-translate-y-1"
-        >
+        <div className="product-card hover:shadow-lg hover:shadow-primary-500/10 hover:-translate-y-1">
             <div className={`product-card-icon bg-gradient-to-br ${product.gradient}`}>
                 {icons[product.icon]}
             </div>
@@ -127,35 +114,35 @@ function ProductCard({ product, index }) {
                 )}
             </div>
             <p className="text-slate-600 leading-relaxed">{product.description}</p>
-        </motion.div>
+        </div>
     )
 }
 
 export default function Products() {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: '-50px' })
+    const isInView = useInView(ref, { once: true, amount: 0.2 })
 
     return (
         <section id="products" className="py-20 md:py-32 bg-white">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <motion.div
-                    ref={ref}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                    className="text-center mb-16"
-                >
+                <div className="text-center mb-16">
                     <h2 className="section-heading">Our Products</h2>
                     <p className="section-subheading">
                         We build practical, well-designed applications across productivity, marketplaces, games, and social experiences.
                     </p>
-                </motion.div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                    {products.map((product, index) => (
-                        <ProductCard key={product.id} product={product} index={index} />
-                    ))}
                 </div>
+
+                <motion.div
+                    ref={ref}
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+                >
+                    {products.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                    ))}
+                </motion.div>
             </div>
         </section>
     )
