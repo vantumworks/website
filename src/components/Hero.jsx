@@ -41,7 +41,7 @@ export default function Hero() {
                         transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
                         className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-10 max-w-3xl mx-auto"
                     >
-                        Vantum Works LLC is a software studio creating consumer and SaaS applications from concept to launch.
+                        Vantum Works is a software studio creating consumer and SaaS applications from concept to launch.
                     </motion.p>
 
                     <motion.div

@@ -99,9 +99,45 @@ const icons = {
     ),
 }
 
+// Container animation - staggers children
+const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.08,
+            delayChildren: 0.1,
+        },
+    },
+}
+
+// Card animation - GPU-accelerated properties only
+const cardVariants = {
+    hidden: {
+        opacity: 0,
+        y: 24,
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            ease: [0.22, 1, 0.36, 1], // Custom ease for smooth deceleration
+        },
+    },
+}
+
 function ProductCard({ product }) {
     return (
-        <div className="product-card hover:shadow-lg hover:shadow-primary-500/10 hover:-translate-y-1">
+        <motion.div
+            variants={cardVariants}
+            className="product-card hover:shadow-lg hover:shadow-primary-500/10 hover:-translate-y-1"
+            style={{
+                willChange: 'opacity, transform',
+                backfaceVisibility: 'hidden',
+                WebkitBackfaceVisibility: 'hidden',
+            }}
+        >
             <div className={`product-card-icon bg-gradient-to-br ${product.gradient}`}>
                 {icons[product.icon]}
             </div>
@@ -114,13 +150,13 @@ function ProductCard({ product }) {
                 )}
             </div>
             <p className="text-slate-600 leading-relaxed">{product.description}</p>
-        </div>
+        </motion.div>
     )
 }
 
 export default function Products() {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, amount: 0.2 })
+    const isInView = useInView(ref, { once: true, amount: 0.15 })
 
     return (
         <section id="products" className="py-20 md:py-32 bg-white">
@@ -134,9 +170,9 @@ export default function Products() {
 
                 <motion.div
                     ref={ref}
-                    initial={{ opacity: 0 }}
-                    animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{ duration: 0.5 }}
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={isInView ? 'visible' : 'hidden'}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
                 >
                     {products.map((product) => (
