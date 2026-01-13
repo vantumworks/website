@@ -6,30 +6,47 @@ A clean, professional marketing website for **Vantum Works LLC**, a software stu
 
 ## Overview
 
-This is a single-page static website designed to establish credibility and legitimacy for external services (Stripe, banks, vendors). The site prioritizes clarity, trust, and polish over flash.
+This is a single-page React website built with Vite, Tailwind CSS, and Framer Motion animations. It's designed to establish credibility and legitimacy for external services (Stripe, banks, vendors).
 
 ## Tech Stack
 
-- **HTML5** - Semantic markup
+- **React 18** - Component-based UI
+- **Vite** - Fast development and build tool
 - **Tailwind CSS v3** - Utility-first styling
-- **Vanilla JavaScript** - Minimal interactivity (mobile menu, animations)
+- **Framer Motion** - Smooth animations and transitions
+
+## Features
+
+- ✨ Smooth entrance animations for all sections
+- 🎨 Modern, minimal design with custom color palette
+- 📱 Fully mobile responsive
+- 🚀 Fast static build, deployable anywhere
+- 👥 Founder profiles with photos
 
 ## Project Structure
 
 ```
 VantumWorks/
-├── index.html              # Main HTML file
-├── package.json            # NPM configuration
+├── index.html              # Entry HTML file
+├── package.json            # Dependencies and scripts
+├── vite.config.js          # Vite configuration
 ├── tailwind.config.js      # Tailwind customization
+├── postcss.config.js       # PostCSS for Tailwind
 ├── src/
-│   └── input.css           # Tailwind input with custom components
-├── dist/
-│   └── output.css          # Compiled CSS (generated)
-├── data/
-│   └── products.js         # Product catalog data
-├── assets/
-│   └── favicon.svg         # Site favicon
-└── README.md               # This file
+│   ├── main.jsx            # React entry point
+│   ├── App.jsx             # Main App component
+│   ├── index.css           # Tailwind styles
+│   └── components/
+│       ├── Header.jsx      # Navigation with animations
+│       ├── Hero.jsx        # Hero section with floating shapes
+│       ├── Products.jsx    # Product cards with stagger animation
+│       ├── About.jsx       # Company info, logo, and founders
+│       └── Footer.jsx      # Contact and legal info
+└── assets/
+    ├── favicon.svg         # Site favicon
+    ├── logo-rocket.jpg     # Vantum Works rocket logo
+    ├── albert-cervantes.jpg # Founder photo
+    └── usha-cervantes.jpg  # Co-founder photo
 ```
 
 ## Getting Started
@@ -40,81 +57,58 @@ VantumWorks/
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd VantumWorks
-   ```
+```bash
+# Clone the repository
+git clone <repository-url>
+cd VantumWorks
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+# Install dependencies
+npm install
 
-3. Build CSS and start development server:
-   ```bash
-   npm run dev
-   ```
+# Start development server
+npm run dev
+```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Available Scripts
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Start development server with CSS hot-reload |
-| `npm run build` | Build minified CSS for production |
-| `npm run serve` | Serve static files (without CSS watching) |
-| `npm run watch:css` | Watch and compile CSS changes |
+| `npm run dev` | Start Vite development server with hot reload |
+| `npm run build` | Build production bundle to `dist/` |
+| `npm run preview` | Preview production build locally |
 
 ## Deployment
 
-This site is deployment-ready for any static hosting platform:
+This site is deployment-ready for any static hosting platform.
 
-### Vercel
+### Vercel / Netlify / Render
 
-1. Connect your repository to Vercel
+1. Connect your repository
 2. Build command: `npm run build`
-3. Output directory: `.` (root)
-
-### Netlify
-
-1. Connect your repository to Netlify
-2. Build command: `npm run build`
-3. Publish directory: `.` (root)
-
-### Render
-
-1. Create a new Static Site on Render
-2. Build command: `npm run build`
-3. Publish directory: `.` (root)
+3. Output directory: `dist`
 
 ### Manual Deployment
 
-Run `npm run build` to generate the production CSS, then upload all files to your hosting provider.
+```bash
+npm run build
+# Upload the `dist/` folder to your hosting provider
+```
 
 ## Customization
 
 ### Updating Products
 
-Edit `data/products.js` to modify the product catalog. Each product has:
-- `id` - Unique identifier
-- `name` - Display name
-- `description` - One-line description
-- `icon` - Icon type (calendar, game, heart, link, users, zap, message)
-- `status` - Either `'launched'` or `'coming-soon'`
-- `color` - Tailwind gradient classes
+Edit the `products` array in `src/components/Products.jsx`
 
-### Updating Content
+### Updating Founders
 
-- **Hero section**: Edit the `<section id="home">` in `index.html`
-- **About section**: Edit the `<section id="about">` in `index.html`
-- **Contact email**: Update the mailto link in the footer
+Edit the `founders` array in `src/components/About.jsx`
 
 ### Styling
 
 - **Colors**: Modify `tailwind.config.js` under `theme.extend.colors`
-- **Components**: Edit custom classes in `src/input.css`
 - **Fonts**: Change the Google Fonts link in `index.html`
 
 ## Browser Support

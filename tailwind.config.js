@@ -1,14 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    "./*.html",
-    "./src/**/*.{js,html}",
-    "./data/**/*.js"
+    "./index.html",
+    "./src/**/*.{js,jsx}"
   ],
   theme: {
     extend: {
       colors: {
-        // Primary palette - Deep professional blues
         primary: {
           50: '#f0f4ff',
           100: '#e0e9ff',
@@ -22,7 +20,6 @@ module.exports = {
           900: '#303281',
           950: '#1e1e4b',
         },
-        // Accent - Warm subtle accent
         accent: {
           50: '#fdf4ff',
           100: '#fae8ff',
@@ -35,33 +32,9 @@ module.exports = {
           800: '#86198f',
           900: '#701a75',
         },
-        // Slate for text and backgrounds
-        slate: {
-          850: '#1a2234',
-          950: '#0d1117',
-        }
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-      },
-      animation: {
-        'fade-in': 'fadeIn 0.6s ease-out forwards',
-        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
-        'float': 'float 6s ease-in-out infinite',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
-        }
       },
     },
   },
