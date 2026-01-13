@@ -99,86 +99,50 @@ const icons = {
     ),
 }
 
-// Container animation - staggers children
-const containerVariants = {
-    hidden: { opacity: 1 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.08,
-            delayChildren: 0.1,
-        },
-    },
-}
+function ProductCard({ product, index }) {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true, margin: '-30px' })
 
-// Card animation - GPU-accelerated properties only
-const cardVariants = {
-    hidden: {
-        opacity: 0,
-        y: 24,
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.5,
-            ease: [0.22, 1, 0.36, 1], // Custom ease for smooth deceleration
-        },
-    },
-}
-
-function ProductCard({ product }) {
     return (
         <motion.div
-            variants={cardVariants}
-            className="product-card hover:shadow-lg hover:shadow-primary-500/10 hover:-translate-y-1"
-            style={{
-                willChange: 'opacity, transform',
-                backfaceVisibility: 'hidden',
-                WebkitBackfaceVisibility: 'hidden',
-            }}
+            ref={ref}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.4, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
+            className="product-card hover:shadow-lg hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 hover:-translate-y-1"
         >
             <div className={`product-card-icon bg-gradient-to-br ${product.gradient}`}>
                 {icons[product.icon]}
             </div>
             <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xl font-bold text-slate-900">{product.name}</h3>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">{product.name}</h3>
                 {product.status === 'live' ? (
                     <span className="badge-live">Live</span>
                 ) : (
                     <span className="badge-coming-soon">Coming Soon</span>
                 )}
             </div>
-            <p className="text-slate-600 leading-relaxed">{product.description}</p>
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{product.description}</p>
         </motion.div>
     )
 }
 
 export default function Products() {
-    const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, amount: 0.15 })
-
     return (
-        <section id="products" className="py-20 md:py-32 bg-white">
+        <section id="products" className="py-20 md:py-32 bg-white dark:bg-slate-900">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="section-heading">Our Products</h2>
-                    <p className="section-subheading">
+                    <h2 className="section-heading dark:text-white">Our Products</h2>
+                    <p className="section-subheading dark:text-slate-400">
                         We build practical, well-designed applications across productivity, marketplaces, games, and social experiences.
                     </p>
                 </div>
 
-                <motion.div
-                    ref={ref}
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate={isInView ? 'visible' : 'hidden'}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
-                >
-                    {products.map((product) => (
-                        <ProductCard key={product.id} product={product} />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    {products.map((product, index) => (
+                        <ProductCard key={product.id} product={product} index={index} />
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     )

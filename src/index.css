@@ -14,7 +14,7 @@
 
 @layer components {
     .product-card {
-        @apply relative bg-white rounded-2xl p-6 shadow-sm border border-slate-100 transition-all duration-300 ease-out;
+        @apply relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 transition-all duration-300 ease-out;
     }
 
     .product-card-icon {
@@ -22,11 +22,11 @@
     }
 
     .badge-coming-soon {
-        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800 border border-amber-200;
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-700;
     }
 
     .badge-live {
-        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 border border-emerald-200;
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-700;
     }
 
     .nav-link {
