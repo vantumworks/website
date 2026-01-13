@@ -101,23 +101,23 @@ const icons = {
 
 function ProductCard({ product, index }) {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: '-50px' })
+    const isInView = useInView(ref, { once: true, margin: '-30px' })
 
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ y: -8, boxShadow: '0 20px 40px -10px rgba(94, 110, 241, 0.15)' }}
-            className="product-card"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{
+                duration: 0.4,
+                delay: index * 0.05,
+                ease: [0.25, 0.1, 0.25, 1]
+            }}
+            className="product-card hover:shadow-lg hover:shadow-primary-500/10 hover:-translate-y-1"
         >
-            <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                className={`product-card-icon bg-gradient-to-br ${product.gradient}`}
-            >
+            <div className={`product-card-icon bg-gradient-to-br ${product.gradient}`}>
                 {icons[product.icon]}
-            </motion.div>
+            </div>
             <div className="flex items-center justify-between mb-2">
                 <h3 className="text-xl font-bold text-slate-900">{product.name}</h3>
                 {product.status === 'live' ? (
@@ -133,16 +133,16 @@ function ProductCard({ product, index }) {
 
 export default function Products() {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: '-100px' })
+    const isInView = useInView(ref, { once: true, margin: '-50px' })
 
     return (
         <section id="products" className="py-20 md:py-32 bg-white">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     ref={ref}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                    transition={{ duration: 0.6 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                     className="text-center mb-16"
                 >
                     <h2 className="section-heading">Our Products</h2>

@@ -1,54 +1,34 @@
 import { motion } from 'framer-motion'
 
+// Simplified animation variants for better Safari performance
+const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+}
+
 export default function Hero() {
     return (
         <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-white to-primary-50 overflow-hidden pt-16">
-            {/* Animated Background Shapes */}
-            <motion.div
-                animate={{
-                    y: [0, -20, 0],
-                    rotate: [0, 5, 0],
-                }}
-                transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                }}
-                className="absolute w-96 h-96 bg-primary-400 rounded-full opacity-20 blur-3xl top-20 -right-48"
+            {/* Static Background Shapes - no animation for Safari performance */}
+            <div
+                className="absolute w-96 h-96 bg-primary-400 rounded-full opacity-15 blur-2xl top-20 -right-48"
+                style={{ willChange: 'auto' }}
             />
-            <motion.div
-                animate={{
-                    y: [0, 20, 0],
-                    rotate: [0, -5, 0],
-                }}
-                transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: 1,
-                }}
-                className="absolute w-80 h-80 bg-accent-300 rounded-full opacity-20 blur-3xl bottom-20 -left-40"
+            <div
+                className="absolute w-80 h-80 bg-accent-300 rounded-full opacity-15 blur-2xl bottom-20 -left-40"
+                style={{ willChange: 'auto' }}
             />
-            <motion.div
-                animate={{
-                    y: [0, -15, 0],
-                    x: [0, 10, 0],
-                }}
-                transition={{
-                    duration: 12,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: 2,
-                }}
-                className="absolute w-64 h-64 bg-primary-300 rounded-full opacity-20 blur-3xl top-1/2 left-1/3"
+            <div
+                className="absolute w-64 h-64 bg-primary-300 rounded-full opacity-15 blur-2xl top-1/2 left-1/3"
+                style={{ willChange: 'auto' }}
             />
 
             <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
                 <div className="text-center max-w-4xl mx-auto">
                     <motion.h1
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                        initial={fadeInUp.initial}
+                        animate={fadeInUp.animate}
+                        transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                         className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-6"
                     >
                         Thoughtful software products for
@@ -56,39 +36,35 @@ export default function Hero() {
                     </motion.h1>
 
                     <motion.p
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+                        initial={fadeInUp.initial}
+                        animate={fadeInUp.animate}
+                        transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
                         className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-10 max-w-3xl mx-auto"
                     >
                         Vantum Works LLC is a software studio creating consumer and SaaS applications from concept to launch.
                     </motion.p>
 
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+                        initial={fadeInUp.initial}
+                        animate={fadeInUp.animate}
+                        transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
                         className="flex flex-col sm:flex-row items-center justify-center gap-4"
                     >
-                        <motion.a
+                        <a
                             href="#products"
-                            whileHover={{ scale: 1.02, y: -2 }}
-                            whileTap={{ scale: 0.98 }}
-                            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 transition-shadow"
+                            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 hover:-translate-y-0.5 transition-all duration-200"
                         >
                             View Our Products
                             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                             </svg>
-                        </motion.a>
-                        <motion.a
+                        </a>
+                        <a
                             href="#about"
-                            whileHover={{ scale: 1.02, y: -2 }}
-                            whileTap={{ scale: 0.98 }}
-                            className="inline-flex items-center px-8 py-4 bg-white text-slate-700 font-semibold rounded-xl border border-slate-200 hover:border-primary-300 hover:text-primary-600 transition-colors"
+                            className="inline-flex items-center px-8 py-4 bg-white text-slate-700 font-semibold rounded-xl border border-slate-200 hover:border-primary-300 hover:text-primary-600 hover:-translate-y-0.5 transition-all duration-200"
                         >
                             Learn More
-                        </motion.a>
+                        </a>
                     </motion.div>
                 </div>
             </div>
