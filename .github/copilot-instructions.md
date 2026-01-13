@@ -16,7 +16,7 @@ This is a single-page React marketing website for **Vantum Works LLC**, a softwa
 ## Project Structure
 
 ```
-/home/runner/work/website/website/
+website/
 ├── index.html              # Entry HTML file
 ├── package.json            # Dependencies and scripts
 ├── vite.config.js          # Vite configuration
