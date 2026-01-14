@@ -31,18 +31,38 @@ function FounderCard({ founder, index }) {
             className="flex flex-col items-center text-center"
         >
             <div className="relative mb-4 group">
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white dark:border-slate-700 shadow-xl group-hover:scale-105 transition-transform duration-200">
+                <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
+                    transition={{
+                        type: 'spring',
+                        stiffness: 200,
+                        damping: 15,
+                        delay: index * 0.15 + 0.2,
+                    }}
+                    className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white dark:border-slate-700 shadow-xl"
+                >
                     <img
                         src={founder.photo}
                         alt={founder.name}
                         className="w-full h-full object-cover"
                     />
-                </div>
-                <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center shadow-lg">
+                </motion.div>
+                <motion.div
+                    initial={{ scale: 0 }}
+                    animate={isInView ? { scale: 1 } : { scale: 0 }}
+                    transition={{
+                        type: 'spring',
+                        stiffness: 300,
+                        damping: 20,
+                        delay: index * 0.15 + 0.4,
+                    }}
+                    className="absolute -bottom-1 -right-1 w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center shadow-lg"
+                >
                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                </div>
+                </motion.div>
             </div>
             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{founder.name}</h3>
             <p className="text-slate-600 dark:text-slate-400 font-medium">{founder.title}</p>
@@ -67,13 +87,23 @@ export default function About() {
                 >
                     <h2 className="section-heading dark:text-white mb-8">About Vantum Works</h2>
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-sm border border-slate-100 dark:border-slate-700">
-                        <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-8 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-200">
+                        <motion.div
+                            initial={{ scale: 0.5, rotate: -90 }}
+                            animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0.5, rotate: -90 }}
+                            transition={{
+                                type: 'spring',
+                                stiffness: 150,
+                                damping: 12,
+                                delay: 0.2,
+                            }}
+                            className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-8 rounded-2xl overflow-hidden shadow-lg"
+                        >
                             <img
                                 src={rocketLogo}
                                 alt="Vantum Works Logo"
                                 className="w-full h-full object-cover"
                             />
-                        </div>
+                        </motion.div>
                         <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
                             Vantum Works LLC is an independent software studio focused on building practical, well-designed digital products. We explore ideas across productivity, marketplaces, games, and social experiences, turning early concepts into polished applications.
                         </p>
