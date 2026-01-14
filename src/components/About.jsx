@@ -32,13 +32,13 @@ function FounderCard({ founder, index }) {
         >
             <div className="relative mb-4 group">
                 <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
+                    initial={{ scale: 0 }}
+                    animate={isInView ? { scale: 1 } : { scale: 0 }}
                     transition={{
                         type: 'spring',
-                        stiffness: 200,
-                        damping: 15,
-                        delay: index * 0.15 + 0.2,
+                        stiffness: 260,
+                        damping: 20,
+                        delay: index * 0.2,
                     }}
                     className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white dark:border-slate-700 shadow-xl"
                 >
