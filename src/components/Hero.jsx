@@ -29,7 +29,7 @@ export default function Hero() {
                         className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white leading-tight mb-6"
                     >
                         Thoughtful software products for
-                        <span className="bg-gradient-to-r from-primary-600 to-accent-600 dark:from-primary-400 dark:to-accent-400 bg-clip-text text-transparent"> work, play, and coordination.</span>
+                        <span className="bg-gradient-to-r from-primary-600 to-accent-600 dark:from-primary-400 dark:to-accent-400 bg-clip-text text-transparent"> work, play, and business.</span>
                     </motion.h1>
 
                     <motion.p
