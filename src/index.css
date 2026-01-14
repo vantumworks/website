@@ -14,7 +14,7 @@
 
 @layer components {
     .product-card {
-        @apply relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 transition-all duration-300 ease-out;
+        @apply relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 transition-shadow transition-colors duration-300 ease-out;
     }
 
     .product-card-icon {
