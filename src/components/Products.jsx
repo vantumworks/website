@@ -40,6 +40,15 @@ const products = [
         gradient: 'from-emerald-500 to-teal-600'
     },
     {
+        id: 'pass-pot-pocket',
+        name: 'Pass Pot Pocket',
+        description: 'A real-time, multiplayer dice game. Each roll sends a chip left, right, or to the pot — last player with chips wins. Play with 1–8 people, together in person or remote.',
+        icon: 'dice',
+        status: 'live',
+        url: 'https://ppp.vantumworks.io',
+        gradient: 'from-fuchsia-500 to-pink-600'
+    },
+    {
         id: 'bar-roster',
         name: 'Bar Roster',
         description: 'Staff your shifts in minutes. Bars and restaurants post open shifts; vetted staff claim them on demand.',
@@ -86,6 +95,14 @@ const icons = {
     grid: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+        </svg>
+    ),
+    dice: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="3" strokeWidth="2" />
+            <circle cx="8" cy="8" r="1.3" fill="currentColor" stroke="none" />
+            <circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none" />
+            <circle cx="16" cy="16" r="1.3" fill="currentColor" stroke="none" />
         </svg>
     ),
 }
