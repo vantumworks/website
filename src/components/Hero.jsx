@@ -28,8 +28,8 @@ export default function Hero() {
                         transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                         className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white leading-tight mb-6"
                     >
-                        Thoughtful software products for
-                        <span className="bg-gradient-to-r from-primary-600 to-accent-600 dark:from-primary-400 dark:to-accent-400 bg-clip-text text-transparent"> work, play, and business.</span>
+                        An independent
+                        <span className="bg-gradient-to-r from-primary-600 to-accent-600 dark:from-primary-400 dark:to-accent-400 bg-clip-text text-transparent"> software studio.</span>
                     </motion.h1>
 
                     <motion.p
@@ -38,7 +38,7 @@ export default function Hero() {
                         transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
                         className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-10 max-w-3xl mx-auto"
                     >
-                        Vantum Works is a software studio creating consumer and SaaS applications from concept to launch.
+                        Vantum Works builds practical, well-designed digital products — across B2B SaaS, consumer utilities, and games.
                     </motion.p>
 
                     <motion.div
@@ -60,7 +60,7 @@ export default function Hero() {
                             href="#about"
                             className="inline-flex items-center px-8 py-4 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 hover:-translate-y-0.5 transition-shadow transition-transform transition-colors duration-200"
                         >
-                            Learn More
+                            About the studio
                         </a>
                     </motion.div>
                 </div>
