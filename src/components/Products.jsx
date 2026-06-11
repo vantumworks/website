@@ -6,7 +6,7 @@ const products = [
     {
         id: 'scout',
         name: 'Scout',
-        description: 'An AI notetaker for recruiter intake calls. Scout listens during your screen and delivers a structured candidate profile, role-fit assessment, and executive summary — ready the moment you hang up.',
+        description: 'Built for recruiter intake calls. Scout listens during your screen and delivers a structured candidate profile, role-fit assessment, and executive summary — ready the moment you hang up.',
         icon: 'mic',
         status: 'live',
         url: 'https://scout.vantumworks.io',
