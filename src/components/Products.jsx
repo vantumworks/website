@@ -13,6 +13,15 @@ const products = [
         gradient: 'from-blue-600 to-indigo-700'
     },
     {
+        id: 'piper',
+        name: 'Piper',
+        description: 'Practice the interview before it counts. Piper is a voice-first mock interview coach — speak your answers aloud under realistic pressure and get constructive feedback, in private, before the real conversation.',
+        icon: 'chat',
+        status: 'live',
+        url: 'https://piper.vantumworks.io',
+        gradient: 'from-sky-500 to-indigo-600'
+    },
+    {
         id: 'link-shrink',
         name: 'Link Shrink',
         description: 'Shorten URLs, generate QR codes, and see where every click came from. A simple, fast tool for marketers, makers, and anyone who shares links.',
@@ -95,6 +104,11 @@ const icons = {
     grid: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+        </svg>
+    ),
+    chat: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
         </svg>
     ),
     dice: (
