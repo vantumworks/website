@@ -13,6 +13,15 @@ const products = [
         gradient: 'from-blue-600 to-indigo-700'
     },
     {
+        id: 'rosa',
+        name: 'Rosa',
+        description: 'Autonomous intake screening that runs the full conversation for you. Rosa emails candidates, holds a 15-minute browser interview on their schedule, and returns a manager-ready brief in minutes — same format as a Scout call. Rosa describes; you decide.',
+        icon: 'sparkles',
+        status: 'live',
+        url: 'https://scout.vantumworks.io/rosa',
+        gradient: 'from-purple-500 to-indigo-600'
+    },
+    {
         id: 'piper',
         name: 'Piper',
         description: 'Practice the interview before it counts. Piper is a voice-first mock interview coach — speak your answers aloud under realistic pressure and get constructive feedback, in private, before the real conversation.',
@@ -20,6 +29,15 @@ const products = [
         status: 'live',
         url: 'https://piper.vantumworks.io',
         gradient: 'from-sky-500 to-indigo-600'
+    },
+    {
+        id: 'storyline',
+        name: 'Storyline',
+        description: 'A career articulation tool that helps you uncover your work experiences through guided conversation, then turns them into polished resume bullets, LinkedIn summaries, cover letters, and interview stories — all grounded in what you actually did.',
+        icon: 'book',
+        status: 'live',
+        url: 'https://storyline.vantumworks.io',
+        gradient: 'from-rose-500 to-red-600'
     },
     {
         id: 'link-shrink',
@@ -56,6 +74,15 @@ const products = [
         status: 'live',
         url: 'https://ppp.vantumworks.io',
         gradient: 'from-fuchsia-500 to-pink-600'
+    },
+    {
+        id: 'boom-snakes',
+        name: 'Boom Snakes',
+        description: 'A competitive two-player snake game — weave through the arena, dodge the bombs, and outsmart your rival to be the last one slithering. Play against the CPU, locally, or online, with more bombs the longer you last.',
+        icon: 'bomb',
+        status: 'live',
+        url: 'https://boomsnakes.vantumworks.io',
+        gradient: 'from-lime-500 to-green-600'
     },
     {
         id: 'bar-roster',
@@ -117,6 +144,22 @@ const icons = {
             <circle cx="8" cy="8" r="1.3" fill="currentColor" stroke="none" />
             <circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none" />
             <circle cx="16" cy="16" r="1.3" fill="currentColor" stroke="none" />
+        </svg>
+    ),
+    sparkles: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+        </svg>
+    ),
+    book: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+    ),
+    bomb: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="10" cy="15" r="6.5" strokeWidth="2" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.5 10.5l3-3m0 0h-2.5m2.5 0v2.5" />
         </svg>
     ),
 }
