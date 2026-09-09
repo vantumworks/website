@@ -130,10 +130,9 @@ Preview the production build locally
 
 ## Deployment
 
-The site is ready for static hosting platforms:
-- Build command: `npm run build`
-- Output directory: `dist`
-- Compatible with Vercel, Netlify, Render, or any static host
+- Production is `main`: the repository is git-linked to the Vercel project `vantum-works-website` (team `vantum-works`), so every push builds and deploys
+- Build command: `npm run build`, output directory: `dist` (auto-detected; `vercel.json` adds caching and security headers)
+- Pull requests get preview deployments, which sit behind Vercel Authentication
 
 ## Restrictions and Preferences
 

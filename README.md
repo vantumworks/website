@@ -81,20 +81,15 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Deployment
 
-This site is deployment-ready for any static hosting platform.
-
-### Vercel / Netlify / Render
-
-1. Connect your repository
-2. Build command: `npm run build`
-3. Output directory: `dist`
-
-### Manual Deployment
+Production is the `main` branch. The repository is git-linked to the Vercel project `vantum-works-website` (team `vantum-works`), which builds every push: Vite is auto-detected, the output directory is `dist/`, and `vercel.json` adds caching and security headers. Pull requests get a preview deployment (behind Vercel Authentication).
 
 ```bash
-npm run build
-# Upload the `dist/` folder to your hosting provider
+vercel ls vantum-works-website --scope vantum-works   # watch a deploy land
+vercel deploy --scope vantum-works --yes              # ad-hoc preview from the working tree
+vercel rollback --scope vantum-works                  # undo a bad production deploy
 ```
+
+DNS lives in Cloudflare: `www` is a DNS-only CNAME to `cname.vercel-dns.com`, and the apex is a DNS-only A record to Vercel that redirects to `www`.
 
 ## Customization
 
