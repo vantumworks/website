@@ -103,15 +103,6 @@ const products = [
         gradient: 'from-emerald-500 to-teal-600'
     },
     {
-        id: 'avail',
-        name: 'Avail',
-        description: 'The anti-link scheduling tool. A Mac app that reads your calendars, shows your free time, and copies it as a table in any time zones you choose. Send that, not a booking link.',
-        icon: 'calendar',
-        status: 'live',
-        url: 'https://www.vantumworks.io/avail/',
-        gradient: 'from-emerald-500 to-teal-600'
-    },
-    {
         id: 'bar-roster',
         name: 'Bar Roster',
         description: 'Staff your shifts in minutes. Bars and restaurants post open shifts; vetted staff claim them on demand.',
