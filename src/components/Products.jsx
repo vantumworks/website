@@ -96,7 +96,7 @@ const products = [
     {
         id: 'avail',
         name: 'Avail',
-        description: 'The anti-link scheduling tool. A Mac app that reads your calendars, shows your free time, and copies it as a table in any time zones you choose. Send that, not a booking link.',
+        description: 'The anti-link scheduling tool. A Mac app that finds your availability and turns it into an easy-to-read message you can paste into chat, email, or a text, in any time zones you choose. Send that, not a booking link.',
         icon: 'calendar',
         status: 'live',
         url: 'https://www.vantumworks.io/avail/',
