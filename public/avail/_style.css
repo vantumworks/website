@@ -19,7 +19,14 @@ h3 { font-size: 17px; margin: 22px 0 6px; }
 p.lede { font-size: 20px; color: var(--muted); margin: 0 0 28px; }
 .hero { display: flex; align-items: center; gap: 24px; margin-bottom: 24px; }
 .hero img { width: 112px; height: 112px; }
-.buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 40px; }
+.buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin: 24px 0 8px; }
+#soon { margin: 0 0 40px; }
+.badge { display: inline-flex; height: 54px; }
+.badge img { height: 54px; width: auto; display: block; }
+.badge:hover { text-decoration: none; filter: brightness(1.15); }
+.badge.mac { align-items: center; gap: 10px; padding: 0 18px 0 14px; border-radius: 9px; border: 1px solid #a6a6a6; background: #000; color: #fff; }
+.badge.mac span { display: flex; flex-direction: column; font-size: 22px; font-weight: 600; line-height: 1.05; letter-spacing: -0.01em; }
+.badge.mac small { font-size: 11px; font-weight: 500; letter-spacing: 0.01em; }
 .btn { display: inline-block; padding: 12px 20px; border-radius: 10px; font-weight: 600; border: 1px solid var(--line); color: var(--ink); background: var(--card); }
 .btn.primary { background: var(--brand); color: #fff; border-color: var(--brand); }
 .btn:hover { text-decoration: none; filter: brightness(1.05); }
