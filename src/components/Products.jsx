@@ -103,6 +103,15 @@ const products = [
         gradient: 'from-emerald-500 to-teal-600'
     },
     {
+        id: 'stock-radar',
+        name: 'Stock Radar',
+        description: 'Find your iPhone Duo. Pick your color, capacity and nearby stores, and Stock Radar watches pickup availability for you and sends an alert the moment a match is in stock. Install it on your iPhone from Safari; no account needed.',
+        icon: 'radar',
+        status: 'live',
+        url: 'https://radar.vantumworks.io',
+        gradient: 'from-slate-700 to-sky-500'
+    },
+    {
         id: 'bar-roster',
         name: 'Bar Roster',
         description: 'Staff your shifts in minutes. Bars and restaurants post open shifts; vetted staff claim them on demand.',
@@ -196,6 +205,14 @@ const icons = {
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <circle cx="10" cy="15" r="6.5" strokeWidth="2" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.5 10.5l3-3m0 0h-2.5m2.5 0v2.5" />
+        </svg>
+    ),
+    radar: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" strokeWidth="2" />
+            <circle cx="12" cy="12" r="4.5" strokeWidth="2" strokeOpacity="0.6" />
+            <path strokeLinecap="round" strokeWidth="2" d="M12 12l5.5-5.5" />
+            <circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none" />
         </svg>
     ),
 }
