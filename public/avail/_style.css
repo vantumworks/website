@@ -20,7 +20,7 @@ p.lede { font-size: 20px; color: var(--muted); margin: 0 0 28px; }
 .hero { display: flex; align-items: center; gap: 24px; margin-bottom: 24px; }
 .hero img { width: 112px; height: 112px; }
 .buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin: 24px 0 8px; }
-#soon { margin: 0 0 40px; }
+#where { margin: 0 0 40px; }
 .badge { display: inline-flex; height: 54px; }
 .badge img { height: 54px; width: auto; display: block; }
 .badge:hover { text-decoration: none; filter: brightness(1.15); }
